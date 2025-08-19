@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Layout */
+.dashboard {
+  display: flex;
+  min-height: 100vh;   /* Full screen height */
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1e1e2f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 12px 0;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+/* Navbar */
+.navbar {
+  background: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-right .icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Content area */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.chart,
+.table {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   ✅ Responsive Fixes
+   ========================= */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr; /* stack chart + table */
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column; /* stack sidebar on top */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sidebar nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .sidebar nav a {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr; /* cards stack */
+  }
+
+  .navbar h1 {
+    font-size: 1rem;
+  }
+
+  .navbar-right .icon {
+    font-size: 1rem;
+  }
+}
+
+
+.upload-container {
+  background: white;
+  height: 94vh;           /* Full screen height */
+  width: 100%;             /* Full width */
+  padding: 30px;
+  box-sizing: border-box;
+  color: #000;
+}
+
+.upload-container h2 {
+  margin-bottom: 20px;
+}
+
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.upload-container input[type="file"] {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.upload-container button {
+  background: #1e1e2f;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-container button:hover {
+  background: #333;
+}
+
+
+/* =========================
+   ✅ Policy Documets
+   ========================= */
+
+.policy-container {
+  width: 100%;
+  padding: 20px;
+  color: #000;
+}
+
+.policy-container h1 {
+  margin-bottom: 20px;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.policy-table th,
+.policy-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.policy-table th {
+  background-color: #f4f4f4;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
