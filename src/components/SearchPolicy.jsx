@@ -11,7 +11,7 @@ function SearchPage() {
 
   // Fetch file list
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/files")
+    fetch("http://127.0.0.1:4000/files")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         return res.json();
@@ -46,7 +46,7 @@ function SearchPage() {
     setResults([]);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/search", {
+      const response = await fetch("http://127.0.0.1:4000/search", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",

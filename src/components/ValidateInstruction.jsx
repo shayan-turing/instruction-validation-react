@@ -11,7 +11,7 @@ function ValidationPage() {
 
   // Fetch file list
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/files")
+    fetch("http://127.0.0.1:4000/files")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         return res.json();
@@ -46,7 +46,7 @@ function ValidationPage() {
     setValidationResult(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/validate_instruction", {
+      const response = await fetch("http://127.0.0.1:4000/validate_instruction", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",

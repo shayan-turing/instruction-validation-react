@@ -5,7 +5,7 @@ export default function PolicyDocuments() {
 
   // Fetch list of files
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/files")
+    fetch("http://127.0.0.1:4000/files")
       .then((res) => res.json())
       .then((data) => setFiles(data.files || []))
       .catch((err) => console.error("Error fetching files:", err));
@@ -13,7 +13,7 @@ export default function PolicyDocuments() {
 
   // Delete file
   const handleDelete = (filename) => {
-    fetch(`http://127.0.0.1:5000/delete/${filename}`, { method: "DELETE" })
+    fetch(`http://127.0.0.1:4000/delete/${filename}`, { method: "DELETE" })
       .then((res) => res.json())
       .then(() => {
         setFiles(files.filter((file) => file !== filename));
